@@ -1,0 +1,71 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+@import "../helpers/animations";
+
+.side-bar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+
+  width: 30px;
+  height: 30vh;
+  max-height: 300px;
+
+  display: flex;
+  background-color: fade-out($gray-color, 0.05);
+  color: white;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+
+  text-align: center;
+  font-weight: 600;
+  transition: 300ms;
+
+  @include mq("small") {
+    display: none;
+  }
+
+  &:hover {
+    width: 30vw;
+    cursor: default;
+  }
+
+  &:hover &__info {
+    animation: displayInfo 100ms 250ms 1 forwards;
+  }
+
+  &__icon {
+    font-size: 2rem;
+  }
+
+  &__link {
+    transition: 300ms;
+    color: $yellow-color;
+
+    &:hover {
+      letter-spacing: 3px;
+    }
+  }
+
+  &__title {
+    writing-mode: vertical-rl;
+    font-size: 1.1rem;
+    color: $yellow-color;
+  }
+
+  &__info {
+    margin: 0 auto;
+    flex-basis: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    writing-mode: sideways-lr;
+    opacity: 0;
+  }
+
+  &__fb {
+    flex-basis: 100%;
+  }
+}

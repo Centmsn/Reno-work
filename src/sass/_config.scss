@@ -1,0 +1,37 @@
+@import "./helpers/variables";
+@import "./helpers/mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $secondary-color;
+}
+
+noscript {
+  color: red;
+  font-size: 1.5rem;
+  text-align: center;
+  display: block;
+}
+
+.wrapper {
+  @extend %fullscreen-container;
+}

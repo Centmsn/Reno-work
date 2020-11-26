@@ -1,0 +1,17 @@
+@import "./variables";
+
+@mixin mq($breakpoint) {
+  $size: map-get($breakpoints, $breakpoint);
+  @if ($size) {
+    @media screen and #{$size} {
+      @content;
+    }
+  }
+}
+
+%fullscreen-container {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 1920px;
+  position: relative;
+}

@@ -1,0 +1,143 @@
+@import "../helpers/mixins";
+
+.gallery {
+  width: 80vw;
+  max-width: 1200px;
+  position: relative;
+  margin: 5vmin auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 215px;
+  gap: 13px;
+
+  @include mq("large") {
+    grid-auto-rows: 175px;
+  }
+
+  @include mq("medium") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include mq("small") {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  @include mq("xsmall") {
+    width: 95vw;
+  }
+
+  &__thumbnail {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 300ms;
+    width: 100%;
+    height: 100%;
+    filter: saturate(1.2);
+
+    @include mq("small") {
+      height: auto;
+      width: 100%;
+    }
+
+    &:hover {
+      box-shadow: 0 0 4px 2px rgb(24, 24, 24);
+    }
+  }
+
+  &__thumbnail--vertical {
+    grid-row: span 2;
+  }
+}
+
+.full-screen {
+  z-index: 9999;
+  &__close-btn {
+    position: fixed;
+    color: white;
+    top: 10px;
+    left: 10px;
+    font-size: 3rem;
+    cursor: pointer;
+  }
+
+  &__container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 0;
+    left: 0;
+    background-color: rgba(36, 36, 36, 0.884);
+    overflow: hidden;
+  }
+
+  &__img-container {
+    flex-basis: 90%;
+    min-width: 90%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    order: 2;
+  }
+
+  &__img {
+    width: 90%;
+    max-width: 1600px;
+
+    filter: saturate(1.3);
+  }
+
+  &__img--vertical {
+    height: 95%;
+    width: auto;
+  }
+
+  &__left-arrow,
+  &__right-arrow,
+  &__close-btn {
+    user-select: none;
+    transition: 300ms;
+    &:hover {
+      color: orange;
+    }
+  }
+
+  &__left-arrow,
+  &__right-arrow {
+    cursor: pointer;
+    flex-basis: 5%;
+    font-size: 4rem;
+    color: white;
+  }
+
+  &__left-arrow {
+    order: 1;
+    text-align: right;
+  }
+
+  &__right-arrow {
+    order: 3;
+    text-align: left;
+  }
+
+  &__arrow-inactive {
+    color: gray;
+
+    &:hover {
+      color: gray;
+    }
+  }
+
+  &__counter {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-size: 1.25rem;
+    color: honeydew;
+  }
+}

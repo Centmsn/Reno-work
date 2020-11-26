@@ -1,0 +1,35 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.list {
+  &__item {
+    font-size: 1.25rem;
+    // margin-left: 4vmin;
+    margin-top: 1vmin;
+
+    @include mq("small") {
+      font-size: 1rem;
+    }
+
+    @include mq("xsmall") {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__link {
+    color: white;
+    transition: 300ms;
+
+    &:hover {
+      color: $yellow-color;
+    }
+  }
+
+  &__link--black {
+    color: black;
+
+    &:hover {
+      color: $yellow-color;
+    }
+  }
+}

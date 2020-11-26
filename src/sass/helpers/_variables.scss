@@ -1,0 +1,23 @@
+$main-color: rgb(255, 255, 255);
+$header-color: rgb(255, 255, 255);
+$secondary-color: rgb(31, 31, 31);
+$yellow-color: rgb(236, 171, 31);
+$gray-color: rgb(56, 56, 56);
+
+$breakpoints: (
+  xlarge: (
+    max-width: 1500px,
+  ),
+  large: (
+    max-width: 1200px,
+  ),
+  medium: (
+    max-width: 1000px,
+  ),
+  small: (
+    max-width: 800px,
+  ),
+  xsmall: (
+    max-width: 400px,
+  ),
+);

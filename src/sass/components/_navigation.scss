@@ -1,0 +1,48 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+@import "./logo";
+
+.navigation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  height: 12vh;
+  max-height: 300px;
+  width: 100vw;
+
+  display: flex;
+  justify-content: space-around;
+
+  background: linear-gradient(180deg, $main-color 90%, rgba(91, 95, 97, 0) 96%);
+
+  &__list {
+    flex-basis: 80%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__item {
+    flex-basis: 20%;
+    flex-grow: 0;
+    text-align: center;
+    font-size: 2rem;
+    transition: 300ms;
+    line-height: 12vh;
+    display: block;
+
+    @include mq("small") {
+      font-size: 1.15rem;
+    }
+
+    @include mq("xsmall") {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

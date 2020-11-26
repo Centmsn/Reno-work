@@ -1,0 +1,259 @@
+@import "./helpers/variables";
+@import "./helpers/mixins";
+@import "./helpers/animations";
+@import "./config";
+@import "./components/navigation";
+@import "./components/gallery";
+@import "./components/footer";
+@import "./components/contactList";
+@import "./components/backtotop";
+
+.header {
+  &__banner {
+    @extend %fullscreen-container;
+    height: 100vh;
+    max-height: 1000px;
+    position: relative;
+
+    @include mq("xlarge") {
+      height: 75vh;
+    }
+
+    @include mq("large") {
+      height: 55vh;
+    }
+
+    @include mq("small") {
+      background-size: cover !important;
+    }
+  }
+
+  &__slogan {
+    width: 100%;
+    position: absolute;
+    z-index: 222;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    vertical-align: center;
+
+    padding: 20px;
+    background-color: fade-out($secondary-color, 0.5);
+    color: $header-color;
+    border-top: 1px solid fade-out($main-color, 0.6);
+    border-bottom: 1px solid fade-out($main-color, 0.6);
+
+    @include mq("large") {
+      top: 30%;
+
+      font-size: 2rem;
+    }
+
+    @include mq("small") {
+      flex-wrap: wrap;
+      padding: 5px;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__company-name {
+    opacity: 0;
+    animation: displayCompanyName 2s 200ms 1 forwards;
+
+    @include mq("small") {
+      flex-basis: 100%;
+    }
+  }
+
+  &__text {
+    font-size: 2.25rem;
+    opacity: 0;
+    animation: dispalyCompanySlogan 2s 1.5s 1 forwards;
+
+    @include mq("large") {
+      font-size: 1.75rem;
+    }
+
+    @include mq("small") {
+      font-size: 1.25rem;
+      flex-basis: 30%;
+    }
+  }
+
+  &__link {
+    color: white;
+  }
+
+  &__video {
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__filter {
+    width: 100%;
+    position: absolute;
+    height: 100vh;
+    max-height: 1000px;
+    top: 0;
+    left: 0;
+    @include mq("xlarge") {
+      height: 75vh;
+    }
+
+    @include mq("large") {
+      height: 55vh;
+    }
+
+    background: linear-gradient(
+      185deg,
+      rgba(91, 95, 97, 0.55) 83%,
+      $main-color 84%
+    );
+  }
+}
+
+.company-description {
+  width: 100%;
+  background-color: $main-color;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding: 0 10px;
+
+  &__title {
+    flex-basis: 75%;
+    margin-bottom: 3vmin;
+    text-align: left;
+
+    @include mq("small") {
+      flex-basis: 100%;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+  }
+
+  &__card {
+    margin-bottom: 4vmin;
+    min-height: 120px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-basis: 85%;
+    border: 2px solid $gray-color;
+    border-radius: 5px;
+    padding: 10px;
+    transform: translateX(-20vw);
+    margin-left: -10%;
+    opacity: 0;
+    box-shadow: 2px 2px 4px 0 black;
+
+    @include mq("medium") {
+      flex-basis: 100%;
+      margin-left: 0;
+    }
+
+    &--visible {
+      animation: displayDescription 1s 0s 1 forwards;
+    }
+  }
+
+  &__image-container {
+    flex-basis: 10%;
+    background-color: $yellow-color;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+
+    @include mq("medium") {
+      flex-basis: 15%;
+      padding: 2px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__text {
+    flex-basis: 95%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    @include mq("medium") {
+      flex-basis: 85%;
+    }
+  }
+
+  &__card--left {
+    transform: translateX(20vw);
+    margin-left: 10%;
+
+    @include mq("medium") {
+      margin-left: 0;
+    }
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    @include mq("xsmall") {
+      font-size: 1.25rem;
+    }
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    transition: 300ms;
+    text-decoration: underline;
+    &:hover {
+      text-decoration-color: $yellow-color;
+    }
+  }
+
+  &__icon {
+    font-size: 3rem;
+  }
+}
+
+.main-gallery {
+  height: 110vh;
+  min-height: 770px;
+  max-height: 1100px;
+  background-color: $main-color;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  @include mq("small") {
+    height: 110vh;
+    align-items: flex-start;
+  }
+
+  &__title {
+    font-size: 1.4rem;
+    align-self: center;
+    text-align: center;
+    flex-basis: 100%;
+
+    @include mq("large") {
+      font-size: 1.5rem;
+    }
+
+    @include mq("small") {
+      font-size: 1.25rem;
+      padding: 3px 0;
+    }
+  }
+}

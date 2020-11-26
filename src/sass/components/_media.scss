@@ -1,0 +1,46 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.media-container {
+  width: 50vw;
+  margin: 0 auto;
+  text-align: center;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: none;
+
+  @include mq("small") {
+    width: 100vw;
+    display: block;
+  }
+
+  &__desc {
+    flex-basis: 100%;
+    font-size: 1rem;
+    margin: 3vmin 0;
+  }
+
+  &__title {
+    font-weight: 700;
+    margin-bottom: 3vmin;
+    font-size: 1.25rem;
+  }
+
+  &__box {
+    flex-basis: 51%;
+  }
+
+  &__link {
+    font-size: 1.5rem;
+    border-radius: 5px;
+    padding: 0 7px;
+    transition: 300ms;
+    color: rgb(0, 0, 189);
+
+    &:hover {
+      color: $yellow-color;
+    }
+  }
+}

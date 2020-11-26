@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Wojciech Rygorowicz" />
+    <meta
+      name="keywords"
+      content="remont, renowacja, wykończenie, poznań, naprawa, elektryka, odnawianie, meble, stolarka, malowanie, okna, drzwi, postarzanie, drewno"
+    />
+    <meta
+      name="Description"
+      content="Świadczymy profesjonalne usługi wykończeniowe na terenie Poznania i okolic. Renowacja elementów takich jak drzwi, okna, balustrady, płoty, boazerie, wiaty, ogrodzenia, altany."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Prata&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="{%=o.htmlWebpackPlugin.files.favicon%}" rel="shortcut icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <title>RENO|WORK</title>
+  </head>
+
+  <body>
+    <header id="header">
+      <nav class="navigation">
+        <div class="logo-container">
+          <img
+            src="./assets/logo-dark-min.png"
+            alt=""
+            class="logo-container__logo"
+          />
+        </div>
+        <ul class="navigation__list">
+          <li>
+            <a href="./services.html" class="navigation__item">Usługi</a>
+          </li>
+          <li>
+            <a href="./contact.html" class="navigation__item"
+              >Kontakt i wycena</a
+            >
+          </li>
+          <li>
+            <a href="./projects.html" class="navigation__item">Projekty</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__banner">
+        <div class="header__filter"></div>
+        <div class="header__slogan">
+          <h1 class="header__company-name">RENO|WORK</h1>
+          <p class="header__text">
+            <a href="#main-gallery" class="header__link">Jakość.</a>
+          </p>
+          <p class="header__text">
+            <a href="#main-gallery" class="header__link">Precyzja.</a>
+          </p>
+          <p class="header__text">
+            <a href="#main-gallery" class="header__link">Wsparcie.</a>
+          </p>
+        </div>
+        <video
+          class="header__video"
+          src="./assets/carpenter.mp4"
+          type="video/mp4"
+          muted
+          autoplay
+          loop
+        ></video>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <main>
+        <div class="company-description">
+          <div class="company-description__title">
+            <h2>Czym zajmuje się RENO|WORK?</h2>
+          </div>
+
+          <noscript
+            >Uruchom JavaScript w przeglądarce by poprawnie wyświetlić zawartość
+            strony.</noscript
+          >
+
+          <div class="company-description__card">
+            <div class="company-description__image-container">
+              <img
+                src="./assets/brush.svg"
+                alt="pędzel"
+                class="company-description__img"
+              />
+            </div>
+            <div class="company-description__text">
+              <p>
+                Renowacją elementów takich jak drzwi, okna, balustrady, płoty,
+                boazerie, wiaty, ogrodzenia, altany i wiele innych.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="company-description__card company-description__card--left"
+          >
+            <div class="company-description__text">
+              <p>
+                Świadczymy również profesjonalne usługi remontowe oraz
+                wykończeniowe na terenie Poznania i okolic.
+              </p>
+            </div>
+            <div class="company-description__image-container">
+              <img
+                src="./assets/drill.svg"
+                alt="wiertarka"
+                class="company-description__img"
+              />
+            </div>
+          </div>
+
+          <div class="company-description__card">
+            <div class="company-description__image-container">
+              <img
+                src="./assets/ruler.svg"
+                alt="linijka"
+                class="company-description__img"
+              />
+            </div>
+            <div class="company-description__text">
+              <p>
+                Realizujemy także projekty od podstaw. Jeżeli chciałbyś poznać
+                pełny zakres usług i dowiedzieć się o nas więcej, to koniecznie
+                zajrzyj
+                <a
+                  href="./src/pages/services.html"
+                  class="company-description__link"
+                  >tutaj</a
+                >.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-gallery" id="main-gallery">
+          <div class="main-gallery__title">
+            <h3>Na co mogą liczyć klienci RENO|WORK?</h3>
+          </div>
+          <div class="gallery">
+            <div class="gallery__change-slide">&lt;</div>
+            <div class="gallery__inner-container">
+              <noscript
+                >Uruchom JavaScript w przeglądarce by poprawnie wyświetlić
+                galerię.</noscript
+              >
+            </div>
+            <div class="gallery__change-slide">&gt;</div>
+          </div>
+          <div
+            class="fb-like"
+            data-href="https://facebook.com/mvmrenowork"
+            data-width=""
+            data-layout="button_count"
+            data-action="like"
+            data-size="large"
+            data-share="true"
+          ></div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer__info">
+        <div class="logo-container logo-container--big">
+          <img
+            src="./assets/logo-light-min.png"
+            alt="logo"
+            class="logo-container__logo"
+          />
+        </div>
+        <p class="footer__text--small">Copyright Reno Work &#169;2020</p>
+        <p class="footer__text--small">Nip: 783-160-26-10</p>
+        <p class="footer__text--small">
+          Icons made by
+          <a
+            href="https://www.flaticon.com/authors/freepik"
+            class="footer__text--small"
+            title="Freepik"
+            >Freepik</a
+          >
+          from
+          <a
+            href="https://www.flaticon.com/"
+            title="Flaticon"
+            class="footer__text--small"
+          >
+            www.flaticon.com</a
+          >
+        </p>
+      </div>
+      <div class="footer__media">
+        <p class="footer__title">Znajdziesz nas na:</p>
+        <ul class="list">
+          <li class="list__item">
+            <a
+              href="https://www.facebook.com/mvmrenowork"
+              class="list__link"
+              target="_blank"
+              title="Przejdź na Facebook"
+            >
+              <i class="fab fa-facebook"></i> Facebook
+            </a>
+          </li>
+          <li class="list__item">
+            <a
+              href="https://fixly.pl/profil/HEOP50cV"
+              target="_blank"
+              class="list__link"
+              ><img alt="Polecają mnie na Fixly"
+              src=https://fixly.pl/profil/HEOP50cV/widget-a01.png></a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="footer__address">
+        <p class="footer__title">Kontakt:</p>
+        <ul class="list">
+          <li class="list__item">
+            <a href="tel:784-600-058" title="Zadzwoń do nas" class="list__link">
+              <span class="list__span">&#9743;</span> +48 784-600-058
+            </a>
+          </li>
+          <li class="list__item">
+            <a
+              href="mailto:renowork.jpw@gmail.com"
+              title="Napisz do nas"
+              class="list__link"
+            >
+              <span class="list__span">&#9993;</span>
+              renowork.jpw@gmail.com</a
+            >
+          </li>
+          <li class="list__item">
+            <span class="list__span">&#9906;</span> Poznań i okolice
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <div class="back-to-top">
+      <a href="#header" class="back-to-top__link">&#8682;</a>
+    </div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v8.0"
+      nonce="KD97QmNW"
+    ></script>
+    <div id="fb-root"></div>
+  </body>
+</html>

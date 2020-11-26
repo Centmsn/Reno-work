@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Description" content="RENO|WORK - skontaktuj się z nami i ustal szczegóły Twojego projektu!">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Prata&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="../assets/favicon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+
+    <script
+    async
+    defer
+    crossorigin="anonymous"
+    src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v8.0"
+    nonce="KD97QmNW"
+  ></script>
+
+    <title>RENO|WORK - kontakt</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navigation">
+        <div class="logo-container">
+          <a href="./index.html">
+            <img
+              src="../assets/logo-dark-min.png"
+              alt=""
+              class="logo-container__logo"
+              title="Przejdź do strony głównej"
+            />
+          </a>
+        </div>
+        <ul class="navigation__list">
+          <li>
+            <a href="./index.html" class="navigation__item">Home</a>
+          </li>
+          <li>
+            <a href="./services.html" class="navigation__item">Usługi</a>
+          </li>
+          <li>
+            <a href="./projects.html" class="navigation__item">Projekty</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="wrapper">
+    <main class="main-container">
+      <div class="description-container">
+        <div class="description-container__description">
+          <h1 class="description-container__title">Napisz do nas</h1>
+          <p class="description-container__text">
+            Chcesz uzyskać wycenę twojego projektu?<br />
+            A może po prostu chcesz zlecić nam wykonanie jakiejś pracy lub
+            skontaktować się w celu poznania terminu realizacji? W tych i innych
+            kwestiach skorzystaj z formularza kontaktowego lub z pozostałych
+            dostępnych form kontaktu.
+          </p>
+          <noscript
+            >Uruchom JavaScript w przeglądarce by wysłać wiadomość, lub
+            skorzystaj z innej formy kontaktu.</noscript
+          >
+          <p class="description-container__text--small">
+            * oznacza pole wymagane
+          </p>
+        </div>
+        <div class="description-container__address">
+          <h3 class="description-container__title">Inne formy kontaktu</h3>
+          <ul class="list">
+            <li class="list__item">
+              <a href="tel:784-600-058" class="list__link list__link--black">
+                <span class="list__span">&#9743;</span> +48 784-600-058
+              </a>
+            </li>
+            <li class="list__item">
+              <a
+                href="mailto:renowork.jpw@gmail.com"
+                class="list__link list__link--black"
+              >
+                <span class="list__span">&#9993;</span>
+                renowork.jpw@gmail.com</a
+              >
+            </li>
+            <li class="list__item">
+              <div
+                class="fb-messengermessageus"
+                messenger_app_id="107900391069902"
+                page_id="107900391069902"
+                color="blue"
+                size="xlarge"
+              ></div>
+            </li>
+          </ul>
+        </div>
+        <div class="description-container__info">
+          <p class="description__tooltip"></p>
+        </div>
+      </div>
+      <div class="form-container">
+        <form id="form" class="form">
+          <div class="form__field">
+            <label for="from_name" class="form__label">Imię*</label>
+            <input
+              type="text"
+              name="from_name"
+              id="from_name"
+              class="form__input"
+              placeholder="Jak mamy się do Ciebie zwracać?"
+              autofocus
+            />
+            <p data-key="field-1" class="form__tooltip"></p>
+          </div>
+          <div class="form__field">
+            <label for="reply_to" class="form__label">Adres email*</label>
+            <input
+              type="text"
+              name="reply_to"
+              id="reply_to"
+              class="form__input"
+              placeholder="adres@email.com"
+            />
+            <p data-key="field-2" class="form__tooltip"></p>
+          </div>
+          <div class="form__field">
+            <label for="reply_to" class="form__label">Telefon</label>
+            <input
+              type="text"
+              name="tel"
+              id="tel"
+              class="form__input"
+              placeholder="784 600 058"
+            />
+            <p data-key="field-3" class="form__tooltip"></p>
+          </div>
+          <div class="form__field">
+            <label for="message" class="form__label">Wiadomość*</label>
+            <textarea
+              name="message"
+              id="message"
+              class="form__input form__input--large"
+              placeholder="W czym możemy pomóc?"
+            ></textarea>
+            <p data-key="field-4" class="form__tooltip"></p>
+          </div>
+          <div class="form__field">
+            <button type="submit" id="button" class="form__submit-btn">
+              Wyślij
+            </button>
+            <button
+              type="reset"
+              id="reset-btn"
+              class="form__reset-btn"
+              title="Wyczyść"
+            >
+              &#10226;
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+    <footer class="footer">
+      <div class="footer__info">
+        <div class="logo-container logo-container--big">
+          <img
+            src="../assets/logo-light-min.png"
+            alt="logo"
+            class="logo-container__logo"
+          />
+        </div>
+        <p class="footer__text--small">Copyright Reno Work &#169;2020</p>
+        <p class="footer__text--small">Nip: 783-160-26-10</p>
+
+      </div>
+      <div class="footer__media">
+        <p class="footer__title">Znajdziesz nas na:</p>
+        <ul class="list">
+          <li class="list__item">
+            <a href="https://www.facebook.com/mvmrenowork" class="list__link" target="_blank" title="Przejdź na Facebook">
+              <i class="fab fa-facebook"></i> Facebook
+            </a>
+          </li>
+          <li class="list__item">
+            <a href=https://fixly.pl/profil/HEOP50cV target=_blank class="list__link"> <img alt="Polecają mnie na Fixly" src=https://fixly.pl/profil/HEOP50cV/widget-a01.png> </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer__address">
+        <p class="footer__title">Kontakt:</p>
+        <ul class="list">
+          <li class="list__item">
+            <a href="tel:784-600-058" title="Zadzwoń do nas" class="list__link">
+              <span class="list__span">&#9743;</span> +48 784-600-058
+            </a>
+          </li>
+          <li class="list__item">
+            <a
+              href="mailto:renowork.jpw@gmail.com"
+              title="Napisz do nas"
+              class="list__link"
+            >
+              <span class="list__span">&#9993;</span>
+              renowork.jpw@gmail.com</a
+            >
+          </li>
+          <li class="list__item">
+            <span class="list__span">&#9906;</span> Poznań i okolice
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <div id="fb-root"></div>
+  </body>
+</html>

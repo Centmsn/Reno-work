@@ -1,0 +1,58 @@
+@keyframes displayCompanyName {
+  0% {
+    opacity: 0;
+    transform: translateX(-5vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes displayInfo {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dispalyCompanySlogan {
+  0% {
+    opacity: 0;
+    transform: translateX(5vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hideTooltip {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-100vw);
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes displayDescription {
+  85% {
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

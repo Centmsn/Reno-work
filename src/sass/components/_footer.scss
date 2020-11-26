@@ -1,0 +1,106 @@
+@import "../helpers/variables";
+@import "../helpers/mixins";
+
+.footer {
+  height: 18vh;
+  max-height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: $gray-color;
+  color: $main-color;
+
+  @include mq("xsmall") {
+    justify-content: center;
+  }
+
+  @include mq("small") {
+    height: auto;
+  }
+
+  &__address {
+    flex-basis: 40%;
+    align-self: center;
+    text-align: left;
+
+    display: flex;
+    justify-content: center;
+
+    @include mq("large") {
+      text-align: right;
+    }
+
+    @include mq("small") {
+      flex-basis: 60%;
+    }
+
+    @include mq("xsmall") {
+      flex-basis: 100%;
+      text-align: center;
+      margin-bottom: 5vmin;
+    }
+  }
+
+  &__text {
+    flex-basis: 40%;
+    font-size: 2rem;
+  }
+
+  &__text--small {
+    font-size: 0.7rem;
+    color: gray;
+    flex-basis: 100%;
+
+    @include mq("xsmall") {
+      text-align: center;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 1.5rem;
+    align-self: center;
+    margin-right: 5vmin;
+
+    @include mq("large") {
+      font-size: 1.25rem;
+      margin-right: 2vmin;
+    }
+
+    @include mq("medium") {
+      display: none;
+    }
+  }
+
+  &__media {
+    flex-basis: 40%;
+
+    display: flex;
+    justify-content: center;
+
+    @include mq("small") {
+      display: none;
+    }
+  }
+
+  &__info {
+    flex-basis: 20%;
+    justify-self: left;
+    align-self: flex-end;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq("small") {
+      flex-basis: 40%;
+    }
+
+    @include mq("xsmall") {
+      flex-basis: 100%;
+
+      justify-content: center;
+      order: 2;
+    }
+  }
+}
