@@ -66,8 +66,10 @@
   }
 
   &__info {
+    position: relative;
+
     flex-basis: 100%;
-    margin-top: 30%;
+    margin-top: 10%;
     background-color: $yellow-color;
     font-size: 1.1rem;
     border-radius: 5px;
@@ -78,6 +80,14 @@
     @include mq("small") {
       border-radius: 0;
     }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 25%;
+    right: -5%;
+
+    font-size: 2rem;
   }
 
   &__address {
@@ -135,7 +145,7 @@
 
     &:focus {
       border: none;
-      box-shadow: 0 0 1px 2px $yellow-color;
+      box-shadow: 0 0 0 2px $yellow-color;
       outline: none;
     }
   }
@@ -170,17 +180,31 @@
 
   &__submit-btn {
     width: 50%;
-    border: 2px solid $secondary-color;
-    background-color: $yellow-color;
-    will-change: background-color;
+    position: relative;
+
+    border: none;
     border-radius: 5px;
+    outline: none;
+
+    background-color: $gray-color;
+    color: $yellow-color;
+
     &:focus {
-      border: 4px double $secondary-color;
+      box-shadow: 0 0 0 2px $yellow-color;
     }
-    &:hover {
-      background-color: $gray-color;
-      color: $yellow-color;
+    &:hover .form__icon {
+      opacity: 1;
     }
+  }
+
+  &__icon {
+    position: absolute;
+    left: 5%;
+    top: 25%;
+
+    opacity: 0;
+
+    transition: 300ms;
   }
 
   &__reset-btn {

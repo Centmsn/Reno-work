@@ -1,10 +1,15 @@
 import "../sass/contact.scss";
 
+const TOOLTIPS = [
+  "Wiadomośc wysłana. Odpowiemy tak szybko jak to możliwe :)",
+  "Uupppsss... coś poszło nie tak. Spróbuj ponownie za chwilę lub wybierz inną formę kontaktu",
+  "Wiadomość niewysłana. Wypełnij poprawnie wymagane pola formularza i spróbuj ponownie. <i class='fas fa-exclamation description-container__icon'></i>",
+];
+
 (function () {
   emailjs.init("user_DoPr8V6rNQ5LKJADjzG7E");
 })();
 
-const btn = document.getElementById("button");
 const resetBtn = document.getElementById("reset-btn");
 
 const formFields = [
@@ -36,8 +41,7 @@ function sendEmail(e) {
 
     emailjs.sendForm(serviceID, templateID, this).then(
       () => {
-        tooltip.innerHTML =
-          "Wiadomośc wysłana. Odpowiemy tak szybko jak to możliwe :)";
+        tooltip.innerHTML = TOOLTIPS[0];
         tooltip.style.transform = "translateX(0)";
 
         setTimeout(() => {
@@ -45,8 +49,7 @@ function sendEmail(e) {
         }, 6000);
       },
       () => {
-        tooltip.innerHTML =
-          "Uupppsss... coś poszło nie tak. Spróbuj ponownie za chwilę lub wybierz inną formę kontaktu";
+        tooltip.innerHTML = TOOLTIPS[1];
         tooltip.style.transform = "translateX(0)";
         setTimeout(() => {
           tooltip.style.transform = "translateX(-100vw)";
@@ -56,8 +59,7 @@ function sendEmail(e) {
 
     resetForm();
   } else {
-    tooltip.innerHTML =
-      "Wiadomość niewysłana. Wypełnij poprawnie wymagane pola formularza i spróbuj ponownie.";
+    tooltip.innerHTML = TOOLTIPS[2];
     tooltip.style.transform = "translateX(0)";
 
     if (!validateFields().name && name.value.length === 0) {

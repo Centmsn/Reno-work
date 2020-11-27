@@ -36,15 +36,16 @@
   }
 
   &__icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: $yellow-color;
   }
 
   &__link {
     transition: 300ms;
-    color: $yellow-color;
+    color: white;
 
     &:hover {
-      letter-spacing: 3px;
+      text-decoration: underline;
     }
   }
 
