@@ -32,6 +32,10 @@ module.exports = {
         loader: "html-loader",
       },
       {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      {
         test: /\.(sass|scss)$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
@@ -41,7 +45,7 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "[name].[ext]",
+              name: "[name]-[contenthash:6].[ext]",
               outputPath: "assets",
               publicPath: "./assets",
             },

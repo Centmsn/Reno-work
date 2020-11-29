@@ -58,7 +58,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
       filename: "index.html",
-      minify: true,
+      minify: false,
       inject: true,
       favicon: "./src/assets/favicon.png",
       chunks: ["index"],
@@ -66,7 +66,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/pages/contact.html",
       filename: "contact.html",
-      minify: true,
+      minify: false,
       inject: true,
       favicon: "./src/assets/favicon.png",
       chunks: ["contact"],
@@ -74,7 +74,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/pages/services.html",
       filename: "services.html",
-      minify: true,
+      minify: false,
       inject: true,
       favicon: "./src/assets/favicon.png",
       chunks: ["services"],
@@ -82,7 +82,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/pages/projects.html",
       filename: "projects.html",
-      minify: true,
+      minify: false,
       inject: true,
       favicon: "./src/assets/favicon.png",
       chunks: ["projects"],
