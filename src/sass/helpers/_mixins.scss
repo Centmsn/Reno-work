@@ -15,3 +15,17 @@
   max-width: 1920px;
   position: relative;
 }
+
+%hover-underline {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  height: 2px;
+
+  background-color: $gray-color;
+
+  transform: scaleX(0);
+  transition: 500ms;
+}

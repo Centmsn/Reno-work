@@ -5,14 +5,25 @@
   flex-basis: 100%;
 
   &__header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
     font-size: 1.5rem;
     background-color: lighten($gray-color, 55%);
     padding: 5px 10px;
-    display: flex;
-    justify-content: space-between;
     cursor: pointer;
 
-    &:hover {
+    &::before {
+      @extend %hover-underline;
+      bottom: 0;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+
+    &:hover .collapsible__plus {
       color: white;
     }
   }
@@ -111,6 +122,17 @@
     padding: 0;
   }
 
+  &__tooltip {
+    position: absolute;
+    right: 5%;
+    color: lighten($gray-color, 25%);
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    color: black;
+  }
+
   &__link {
     color: white;
     &:hover {
@@ -124,11 +146,6 @@
     flex-wrap: wrap;
     background-color: white;
     padding: 5px;
-  }
-
-  &__icon {
-    margin-right: 4px;
-    color: green;
   }
 
   &__item {

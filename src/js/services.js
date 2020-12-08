@@ -65,9 +65,16 @@ const toggleCollapsibleVisibility = (forward) => {
       throttle = true;
     }, 500);
     const collapsible = document.querySelector(".collapsible__body");
-    const icon = document.querySelector(".collapsible__plus");
+    const icon = document.querySelector(".collapsible__icon");
     const cards = document.querySelectorAll(".collapsible__card");
     const header = document.querySelector(".collapsible__header");
+    const tooltip = document.querySelector(".collapsible__tooltip");
+
+    if (forward) {
+      tooltip.textContent = "kliknij żeby zwinąć";
+    } else {
+      tooltip.textContent = "kliknij żeby rozwinąć";
+    }
 
     const { top } = header.getBoundingClientRect();
 

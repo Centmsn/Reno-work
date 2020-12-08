@@ -21,14 +21,13 @@
     flex-basis: 100%;
     text-align: center;
     padding: 10px 0;
-    color: $yellow-color;
-    background-color: $gray-color;
     margin-bottom: 10vh;
   }
 
   &__title {
-    font-size: 2.5rem;
     max-height: 500px;
+    font-weight: 200;
+    font-size: 2rem;
     overflow: hidden;
 
     @include mq("medium") {
