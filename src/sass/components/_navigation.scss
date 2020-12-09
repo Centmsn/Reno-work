@@ -16,12 +16,44 @@
 
   background: linear-gradient(180deg, $main-color 90%, rgba(91, 95, 97, 0) 96%);
 
+  &--dark {
+    background: $gray-color;
+    border-bottom: 1px solid darken($dark-theme-font, 50%);
+  }
+
   &__list {
     flex-basis: 80%;
 
     display: flex;
     justify-content: space-around;
     align-items: center;
+  }
+
+  &__darkmode {
+    position: relative;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    background-color: $yellow-color;
+    border-radius: 50%;
+    padding: 10px;
+
+    transition: 300ms;
+
+    &:hover {
+      color: $dark-theme-font;
+      background-color: $gray-color;
+    }
+  }
+
+  &__darkmode--dark {
+    color: $dark-theme-font;
+    background-color: $gray-color;
+
+    &:hover {
+      color: black;
+      background-color: $yellow-color;
+    }
   }
 
   &__item {
@@ -44,12 +76,21 @@
     }
 
     &::before {
-      @extend %hover-underline;
+      @include hover-underline($gray-color);
       bottom: 20%;
     }
 
     &:hover::before {
       transform: scaleX(1);
+    }
+  }
+
+  &__item--dark {
+    color: $dark-theme-font;
+
+    &::before {
+      @include hover-underline(lighten($gray-color, 25%));
+      bottom: 20%;
     }
   }
 }

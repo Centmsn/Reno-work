@@ -99,6 +99,12 @@
     }
   }
 
+  &--dark {
+    box-shadow: 0 10px 10px 1px rgb(46, 46, 46);
+    background-color: $gray-color;
+    color: $dark-theme-font;
+  }
+
   &--inactive-left,
   &--inactive-right {
     opacity: 1;

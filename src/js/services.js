@@ -1,5 +1,6 @@
 import "../sass/services.scss";
 import "./tools/backtotop";
+import "./darkmode/darkmode";
 import gsap from "gsap";
 
 let throttle = true;

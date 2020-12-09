@@ -16,7 +16,7 @@
   position: relative;
 }
 
-%hover-underline {
+@mixin hover-underline($color) {
   content: "";
   position: absolute;
   left: 0;
@@ -24,7 +24,7 @@
 
   height: 2px;
 
-  background-color: $gray-color;
+  background-color: $color;
 
   transform: scaleX(0);
   transition: 500ms;
