@@ -13,6 +13,7 @@
   max-height: 300px;
 
   display: flex;
+
   background-color: fade-out($gray-color, 0.05);
   color: white;
   border-bottom-right-radius: 5px;
@@ -24,6 +25,13 @@
 
   @include mq("small") {
     display: none;
+  }
+
+  &--dark {
+    border-top: 1px solid $yellow-color;
+    border-right: 1px solid $yellow-color;
+    border-bottom: 1px solid $yellow-color;
+    background-color: lighten($gray-color, 20%);
   }
 
   &:hover {
@@ -58,15 +66,17 @@
   &__info {
     margin: 0 auto;
     flex-basis: 75%;
+
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+
     writing-mode: sideways-lr;
     opacity: 0;
   }
 
-  &__fb {
+  &__block {
     flex-basis: 100%;
   }
 }

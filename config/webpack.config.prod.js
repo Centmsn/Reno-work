@@ -37,7 +37,12 @@ module.exports = {
       },
       {
         test: /\.(sass|scss)$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          "sass-loader",
+        ],
       },
       {
         test: /\.(jpg|jpeg|svg|png|gif|mp4)$/i,
@@ -55,7 +60,7 @@ module.exports = {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 65,
+                quality: 55,
               },
             },
           },

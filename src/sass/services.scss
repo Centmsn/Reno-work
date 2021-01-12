@@ -91,6 +91,10 @@
     margin-bottom: 0;
   }
 
+  &--dark {
+    color: white;
+  }
+
   &__title {
     align-self: flex-start;
     font-size: 2rem;

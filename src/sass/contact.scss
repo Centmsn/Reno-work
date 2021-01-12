@@ -6,25 +6,33 @@
 @import "./components/contactList";
 
 .main-container {
-  max-width: 1920px;
-  display: flex;
-  flex-wrap: wrap;
   position: relative;
   top: 18vh;
+  max-width: 1920px;
   margin-bottom: 20vh;
-  text-align: center;
+
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+
+  text-align: center;
+
+  &--dark {
+    color: white;
+  }
 }
 
 .description-container {
   flex-basis: 35%;
-  padding: 20px;
 
-  text-align: center;
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: center;
+
+  text-align: center;
+
+  padding: 20px;
 
   @include mq("small") {
     flex-basis: 100%;
@@ -37,10 +45,13 @@
 
   &__title {
     flex-basis: 100%;
+    margin-bottom: 3vmin;
+
+    border-radius: 5px;
+
     color: $yellow-color;
     background-color: $gray-color;
-    margin-bottom: 3vmin;
-    border-radius: 5px;
+
     padding: 5px 0;
 
     @include mq("small") {
@@ -50,9 +61,10 @@
 
   &__text {
     align-self: flex-start;
+    margin-bottom: 5vmin;
+
     font-size: 1.1rem;
     text-align: justify;
-    margin-bottom: 5vmin;
 
     @include mq("small") {
       padding: 5px;
@@ -60,8 +72,9 @@
   }
 
   &__text--small {
-    font-size: 0.75rem;
     margin: 2vmin auto;
+
+    font-size: 0.75rem;
     color: grey;
   }
 
@@ -70,10 +83,11 @@
 
     flex-basis: 100%;
     margin-top: 10%;
+    transform: translateX(-100vw);
+
     background-color: $yellow-color;
     font-size: 1.1rem;
     border-radius: 5px;
-    transform: translateX(-100vw);
     transition: 500ms;
     padding: 10px 5px;
 
@@ -194,6 +208,10 @@
     }
     &:hover .form__icon {
       opacity: 1;
+    }
+
+    &--dark {
+      border: 2px solid white;
     }
   }
 

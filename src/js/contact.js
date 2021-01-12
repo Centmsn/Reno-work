@@ -1,4 +1,5 @@
 import "../sass/contact.scss";
+import "./darkmode/darkmode";
 
 const TOOLTIPS = [
   "Wiadomośc wysłana. Odpowiemy tak szybko jak to możliwe :)",

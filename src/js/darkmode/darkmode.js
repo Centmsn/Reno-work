@@ -1,49 +1,77 @@
-import Darkmode from "../tools/darkmode";
-import { home, services } from "./elements";
+import { CONTACT, HOME, PROJECTS, SERVICES } from "./elements";
 
 let page;
-console.log(window.location.pathname);
+
 switch (window.location.pathname) {
   case "/index.html":
-    page = home;
+    page = HOME;
     break;
 
   case "/services.html":
-    page = services;
+    page = SERVICES;
+    break;
+
+  case "/contact.html":
+    page = CONTACT;
+    break;
+
+  case "/projects.html":
+    page = PROJECTS;
     break;
 
   default:
+    page = HOME;
     break;
 }
 
-const mode = new Darkmode();
 const elements = [
   document.querySelector(".navigation"),
   ...document.querySelectorAll(".navigation__item"),
   document.querySelector(".navigation__darkmode"),
+  document.querySelector(".footer"),
 ].concat(page);
 
-const switchMode = () => {
-  mode.toggleDarkmode();
-  triggerDarkmode();
-};
+class Darkmode {
+  constructor(elements) {
+    this.elements = elements;
+    document
+      .querySelector(".navigation__darkmode")
+      .addEventListener("click", this.setDarkmode);
 
-const triggerDarkmode = () => {
-  if (mode.getMode()) {
-    elements.forEach((el) => {
-      el.classList.add(`${el.classList[0]}--dark`);
-    });
-  } else {
-    elements.forEach((el) => {
-      el.classList.remove(`${el.classList[0]}--dark`);
-    });
+    this.triggerDarkmode(this.getMode());
   }
-};
 
-if (mode.getMode()) {
-  triggerDarkmode();
+  setDarkmode = () => {
+    if (this.getMode()) {
+      localStorage.setItem("darkmode", "false");
+      this.triggerDarkmode(false);
+    } else {
+      localStorage.setItem("darkmode", "true");
+      this.triggerDarkmode(true);
+    }
+  };
+
+  getMode = () => {
+    const darkmode = localStorage.getItem("darkmode");
+
+    if (darkmode && darkmode === "true") return true;
+    else if ((darkmode && darkmode === "false") || darkmode === null)
+      return false;
+  };
+
+  triggerDarkmode = (isDark) => {
+    if (isDark) {
+      this.elements.forEach((el) => {
+        el.classList.add(`${el.classList[0]}--dark`);
+      });
+      document.body.style.backgroundColor = "rgb(56, 56, 56)";
+    } else {
+      this.elements.forEach((el) => {
+        el.classList.remove(`${el.classList[0]}--dark`);
+      });
+      document.body.style.backgroundColor = "";
+    }
+  };
 }
 
-document
-  .querySelector(".navigation__darkmode")
-  .addEventListener("click", switchMode);
+new Darkmode(elements);
