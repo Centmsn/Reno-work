@@ -124,7 +124,12 @@
   &__tooltip {
     position: absolute;
     right: 5%;
+
     color: lighten($gray-color, 25%);
+
+    @include mq("small") {
+      display: none;
+    }
   }
 
   &__icon {

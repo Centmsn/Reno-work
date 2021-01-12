@@ -25,6 +25,7 @@
     flex-basis: 80%;
 
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
   }
@@ -60,15 +61,17 @@
     position: relative;
 
     display: block;
-    flex-basis: 20%;
     flex-grow: 0;
-    text-align: center;
+
     font-size: 2rem;
-    transition: 300ms;
+    text-align: center;
     line-height: 12vh;
+
+    transition: 300ms;
 
     @include mq("small") {
       font-size: 1.15rem;
+      line-height: 1.2rem;
     }
 
     @include mq("xsmall") {
@@ -78,6 +81,10 @@
     &::before {
       @include hover-underline($gray-color);
       bottom: 20%;
+
+      @include mq("small") {
+        bottom: 0;
+      }
     }
 
     &:hover::before {

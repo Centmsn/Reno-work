@@ -1,7 +1,9 @@
+import gsap from "gsap";
+
 import "../sass/services.scss";
 import "./tools/backtotop";
-import "./darkmode/darkmode";
-import gsap from "gsap";
+import ELEMENTS from "./darkmode/elements";
+import Darkmode from "./darkmode/darkmode";
 
 let throttle = true;
 
@@ -96,3 +98,5 @@ const toggleCollapsibleVisibility = (forward) => {
     }
   }
 };
+
+new Darkmode([...ELEMENTS.SERVICES, ...ELEMENTS.DEFAULTS]);

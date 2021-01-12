@@ -1,36 +1,3 @@
-import { CONTACT, HOME, PROJECTS, SERVICES } from "./elements";
-
-let page;
-
-switch (window.location.pathname) {
-  case "/index.html":
-    page = HOME;
-    break;
-
-  case "/services.html":
-    page = SERVICES;
-    break;
-
-  case "/contact.html":
-    page = CONTACT;
-    break;
-
-  case "/projects.html":
-    page = PROJECTS;
-    break;
-
-  default:
-    page = HOME;
-    break;
-}
-
-const elements = [
-  document.querySelector(".navigation"),
-  ...document.querySelectorAll(".navigation__item"),
-  document.querySelector(".navigation__darkmode"),
-  document.querySelector(".footer"),
-].concat(page);
-
 class Darkmode {
   constructor(elements) {
     this.elements = elements;
@@ -38,6 +5,7 @@ class Darkmode {
       .querySelector(".navigation__darkmode")
       .addEventListener("click", this.setDarkmode);
 
+    console.log(this.elements);
     this.triggerDarkmode(this.getMode());
   }
 
@@ -74,4 +42,4 @@ class Darkmode {
   };
 }
 
-new Darkmode(elements);
+export default Darkmode;

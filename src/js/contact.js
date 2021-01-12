@@ -1,5 +1,6 @@
 import "../sass/contact.scss";
-import "./darkmode/darkmode";
+import ELEMENTS from "./darkmode/elements";
+import Darkmode from "./darkmode/darkmode";
 
 const TOOLTIPS = [
   "Wiadomośc wysłana. Odpowiemy tak szybko jak to możliwe :)",
@@ -199,6 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
   resetBtn.addEventListener("click", resetForm);
 
   document.querySelector("textarea").addEventListener("blur", displayTooltip);
+  document.getElementById("form").addEventListener("submit", sendEmail);
+  new Darkmode([...ELEMENTS.CONTACT, ...ELEMENTS.DEFAULTS]);
 });
-
-document.getElementById("form").addEventListener("submit", sendEmail);

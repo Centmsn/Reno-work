@@ -1,7 +1,9 @@
+import gsap from "gsap";
+
 import "../sass/projects.scss";
 import "./tools/backtotop";
-import "./darkmode/darkmode";
-import gsap from "gsap";
+import ELEMENTS from "./darkmode/elements";
+import Darkmode from "./darkmode/darkmode";
 
 class Gallery {
   constructor() {
@@ -188,4 +190,5 @@ class Gallery {
 
 document.addEventListener("DOMContentLoaded", () => {
   new Gallery();
+  new Darkmode([...ELEMENTS.PROJECTS, ...ELEMENTS.DEFAULTS]);
 });
